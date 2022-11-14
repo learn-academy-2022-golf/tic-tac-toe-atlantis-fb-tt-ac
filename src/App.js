@@ -4,12 +4,22 @@ import './App.css'
 
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
+  const [counter, setCounter] = useState(1)
   
   const handleGamePlay = (index) => {
     let updatedSquares = [...squares]
-    updatedSquares[index] = "🌴"
-    setSquares(updatedSquares)
+    
+    if(counter % 2 === 0) {
+      updatedSquares[index] = "🐢"
+      setSquares(updatedSquares)
+      setCounter(counter + 1)
+    } else {
+      updatedSquares[index] = "🌴"
+      setSquares(updatedSquares)
+      setCounter(counter + 1)
   }
+}
+
 
   return (
     <>
