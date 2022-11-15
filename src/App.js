@@ -5,20 +5,18 @@ import './App.css'
 const App = () => {
   
   const [squares, setSquares] = useState(Array(9).fill(null))
-
-  
-  // Use const player for later
-
   const [counter, setCounter] = useState(1)
+  const [players, setPlayers] = useState("x")
   
-  const handleGamePlay = (index) => {
+  const handleGamePlay = (index, value) => {
     let updatedSquares = [...squares]
     
-    if(counter % 2 === 0) {
+    if(counter % 2 === 0 && !squares[index]) {
       updatedSquares[index] = "🐢"
       setSquares(updatedSquares)
       setCounter(counter + 1)
-    } else {
+    // 
+    } else if (!squares[index]){
       updatedSquares[index] = "🌴"
       setSquares(updatedSquares)
       setCounter(counter + 1)
@@ -28,11 +26,10 @@ const App = () => {
 
   console.log(squares)
 
-  // Use map to get 9 squares
-  // Try to use filter to alternate x's & o's
+
   return (
-
-
+      <>
+      <h1>Tic Tac Toe</h1>
       <div className = "gameboard">
 
         {squares.map( (value, index) => {

@@ -12,6 +12,8 @@ h1 {
   height: 100px;
   width: 100px;
   border: 2px solid aqua;
+  text-align: center;
+  font-size: 50px;
 }
 
 /* For 3 x 3 grid */

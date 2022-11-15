@@ -7,26 +7,27 @@ When creating a project it is important to think about organization of your code
 ### 📚 User Stories
 
 
-In progress - As a user, I can see a three by three grid game board on the page.
+✅ - As a user, I can see a three by three grid game board on the page.
 
 Get a box to show up, using <Square />
 Make 9 more, using map()
 Using CSS, make each an actual square
+✅
 
 
-
-- As a user, I can click on a square to mark it.
+✅ As a user, I can click on a square to mark it.
     -Make a square change by clicking on it, with a placeholder emoji;
     -Click Event for each square, passing a function that would invoke a tree emoji every time the square is clicked
     -console.log() to verify
     - branch name: tic-tac-toe-atlantis-fb-tt-ac
-- As a user, my partner can click on a square after me and see their mark.
+✅As a user, my partner can click on a square after me and see their mark.
     - branch: partner-check-square
     - set boolean or counter 
     - use useState initial value + 1
     - use conditional statement to check if it is divisible by 2
     - set counter + 1 increments to alternate between emojis every time the square is clicked
-- As a user, I can't click on a square that has already been marked.
+✅As a user, I can't click on a square that has already been marked.
+    - in conditonal statement, !squares[index] null 
 - As a user, when either my partner or I win the game (three squares in a row: horizontally, vertically, or diagonally) I can see a notice telling me which player won.
 - As a user, I can't continue playing the game after the game has been won.
 - As a user, if there are no more squares available, I can see a notice telling me that the game has ended.
