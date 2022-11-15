@@ -5,21 +5,41 @@ import './App.css'
 const App = () => {
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [counter, setCounter] = useState(1)
-  
+  const [checkedClick, setCheckedClick] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ])
+
   const handleGamePlay = (index) => {
     let updatedSquares = [...squares]
-    
-    if(counter % 2 === 0) {
-      updatedSquares[index] = "🐢"
-      setSquares(updatedSquares)
-      setCounter(counter + 1)
-    } else {
-      updatedSquares[index] = "🌴"
-      setSquares(updatedSquares)
-      setCounter(counter + 1)
-  }
-}
+    // conditional that checks for clicked status:
+    // If it is true then 
+    // Expected: Determine if a button has been clicked on
+      // If it has, render nothing
+      // If it it hasnt render counter function. 
 
+
+
+      
+    if(counter % 2 === 0 && !checkedClick[index]) {
+        updatedSquares[index] = "🐢"
+        setSquares(updatedSquares)
+        setCounter(counter + 1)
+        setCheckedClick[index] = true
+      } else if (!checkedClick[index]) {
+        updatedSquares[index] = "🌴"
+        setSquares(updatedSquares)
+        setCounter(counter + 1)
+        setCheckedClick[index] = true
+    }
+}
 
   return (
     <>
@@ -47,6 +67,6 @@ const App = () => {
 
     </>
   )
-}
+      }      
 
 export default App
