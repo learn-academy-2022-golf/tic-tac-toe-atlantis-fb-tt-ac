@@ -6,23 +6,45 @@ const App = () => {
   
   const [squares, setSquares] = useState(Array(9).fill(null))
   const [counter, setCounter] = useState(1)
-  const [players, setPlayers] = useState("x")
+  const [players, setPlayers] = useState(1)
   
   const handleGamePlay = (index, value) => {
     let updatedSquares = [...squares]
     
-    if(counter % 2 === 0 && !squares[index]) {
-      updatedSquares[index] = "🐢"
+    if(players === 1 && !squares[index]) {
+      updatedSquares[index] = "x"
       setSquares(updatedSquares)
-      setCounter(counter + 1)
+      setPlayers(2)
+      if (checkWinningPatterns == true) {
+        alert(`${players} has won!`)
+      }
     // 
-    } else if (!squares[index]){
-      updatedSquares[index] = "🌴"
+    } else if (players === 2 && !squares[index]){
+      updatedSquares[index] = "o"
       setSquares(updatedSquares)
-      setCounter(counter + 1)
+      setPlayers(1)
+      if (checkWinningPatterns == true) {
+        alert(`${players} has won!`)
+      }
+  }
+}
+const checkWinningPatterns = () => {
+  if (squares[0] == "x") {
+    alert(`${players} has won!`)
   }
 }
 
+
+const winningPatterns = [
+  [0, 1, 2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6]
+]
 
   console.log(squares)
 
