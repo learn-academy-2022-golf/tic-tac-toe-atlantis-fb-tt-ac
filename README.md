@@ -7,7 +7,13 @@ When creating a project it is important to think about organization of your code
 ### 📚 User Stories
 
 
-✅ - As a user, I can see a three by three grid game board on the page.
+In progress - As a user, I can see a three by three grid game board on the page.
+
+Get a box to show up, using <Square />
+Make 9 more, using map()
+Using CSS, make each an actual square
+
+
 
 - As a user, I can click on a square to mark it.
 - As a user, my partner can click on a square after me and see their mark.
